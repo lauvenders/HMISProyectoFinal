@@ -4,6 +4,10 @@ session_start();
 // connect to database
 $db = new mysqli('localhost', 'root', '', 'multi_login');
 
+if ($db->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 // variable declaration
 $username = "";
 $email    = "";
