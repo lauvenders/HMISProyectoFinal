@@ -21,11 +21,11 @@
 	</div>
 	<div class="input-group">
 		<label>Password</label>
-		<input type="password" name="password" value="<?php echo $password; ?>">
+		<input type="password" name="password_1">
 	</div>
 	<div class="input-group">
 		<label>Confirm password</label>
-		<input type="password" name="password2" value="<?php echo $password2; ?>">
+		<input type="password" name="password_2">
 	</div>
 	<div class="input-group">
 		<button type="submit" class="btn" name="register_btn">Register</button>
