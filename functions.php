@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = new mysqli('localhost', 'root', '', 'multi_login');
+$db = new mysqli('127.0.0.1', 'azure', '6#vWHD_$', 'localdb');
 
 if ($db->connect_error) {
     die("Connection failed: " . $conn->connect_error);
