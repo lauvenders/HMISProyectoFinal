@@ -23,11 +23,11 @@
     <table style="width:100%">
       <thead>
           <tr>
-              <th>ID</th>
-              <th>User</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Password</th>
+              <th>id</th>
+              <th>username</th>
+              <th>email</th>
+              <th>user_type</th>
+              <th>password</th>
           </tr>
       </thead>
       <tbody>
@@ -40,7 +40,7 @@
         $result = $conn->$query($sql);
         if($result -> num_rows > 0){
           while($row = $result->fetch_assoc()){
-              echo "<tr><td>".$row["id"]."</td><td>".$row["username"].$rowtwo["lastname"]."</td><td>".$row["email"].
+              echo "<tr><td>".$row["id"]."</td><td>".$row["username"]."</td><td>".$row["email"].
               "</td><td>".$row["user_type"]."</td><td>".$row["password"]."</td></tr>";
           }
         }
