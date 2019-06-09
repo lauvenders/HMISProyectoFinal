@@ -41,8 +41,6 @@
                 .$row['password']."</td><td>
                 <div>
                   <a href=edit_user.php>Edit</a>
-                  edit=<?php echo $row[id];?>
-                  class=edit_btn
                 </div>
                 <div>
                   <a href=delete_user.php>Delete</a>
