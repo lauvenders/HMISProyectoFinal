@@ -30,6 +30,7 @@
               <th>Password</th>
           </tr>
       </thead>
+      <tbody>
         <?php
         $conn = mysqli_connect('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
         if($conn -> connect_error){
@@ -42,12 +43,14 @@
               echo "<tr><td>".$row["id"]."</td><td>".$row["username"].$rowtwo["lastname"]."</td><td>".$row["email"].
               "</td><td>".$row["user_type"]."</td><td>".$row["password"]."</td></tr>";
           }
+          echo "</table>";
         }
         else{
           echo "0 results";
         }
         $conn-> close();
         ?>
+      </tbody>
     </table>
   </body>
   </html>
