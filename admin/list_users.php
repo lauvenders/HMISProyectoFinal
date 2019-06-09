@@ -32,8 +32,8 @@
       </thead>
       <tbody>
         <?php
-        $query = mysql_query("SELECT * FROM multi_login WHERE user_type = "user"");
-        while($row = mysql_fetch_array($query)){
+        $query = $sqlLink->query("SELECT * FROM multi_login WHERE user_type = "user"");
+        while($row = $query->fetch_array()){
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
             echo "<td>".$row['username'].$rowtwo['lastname']."</td>";
