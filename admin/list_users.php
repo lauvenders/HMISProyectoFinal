@@ -40,7 +40,7 @@
                 .$row['user_type']."</td><td>"
                 .$row['password']."</td><td>
                 <div>
-                  <a href=edit_user.php ?edit=<?php echo $row[id]; ?></a>
+                  <a href=edit_user.php ?edit=<?php echo $row[id]; ?> >Edit</a>
                 </div>
                 <div>
                   <a href=delete_user.php class=del_btn>Delete</a>
