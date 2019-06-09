@@ -38,9 +38,9 @@
                 .$row['username']."</td><td>"
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
-                .$row['password']."</td><td>
-                <a href="create_user.php"> + modify user</a>
-                </td></tr>";
+                .$row['password']."</td><td>"
+                .<a href="create_user.php"> + modify user</a>
+                ."</td></tr>";
             }
           ?>
           </tbody>
