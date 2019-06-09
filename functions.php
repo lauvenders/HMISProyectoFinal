@@ -82,6 +82,13 @@ function getUserById($id){
 	return $user;
 }
 
+function getusers(){
+  global $db;
+  $query = "SELECT * FROM users WHERE 1";
+  $result = mysqli_query($db, $query);
+  return $result;
+}
+
 // escape string
 function e($val){
 	global $db;
