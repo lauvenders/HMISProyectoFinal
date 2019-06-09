@@ -1,4 +1,6 @@
-<?php include('../functions.php') ?>
+<?php include('../functions.php')
+  $db = new mysqli('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
+?>
 
   <!DOCTYPE html>
   <html>
@@ -32,8 +34,8 @@
       </thead>
       <tbody>
         <?php
-        include_once('inc/conf/databaseConnect.php');
-        $query = $sqlLink->query("SELECT * FROM multi_login WHERE user_type = "user"");
+        global $db;
+        $query = ("SELECT * FROM multi_login WHERE user_type = "user"");
         while($row = $query->fetch_array()){
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
