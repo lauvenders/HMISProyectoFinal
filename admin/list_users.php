@@ -32,6 +32,7 @@
       </thead>
       <tbody>
         <?php
+        include_once('inc/conf/databaseConnect.php');
         $query = $sqlLink->query("SELECT * FROM multi_login WHERE user_type = "user"");
         while($row = $query->fetch_array()){
             echo "<tr>";
