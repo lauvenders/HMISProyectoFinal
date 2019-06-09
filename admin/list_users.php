@@ -38,10 +38,10 @@
                 .$row['username']."</td><td>"
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
-                .$row['password']."</td><td><div>Edit User</div> &nbsp; <div>Delete User</div></td></tr>";
+                .$row['password']."</td><td><div>Edit User</div><div>Delete User</div></td></tr>";
             }
           ?>
-          </tbody>
+        </tbody>
     </table>
   </div>
   </body>
