@@ -182,27 +182,18 @@ function isAdmin()
 	}
 }
 
-if (isset($_GET['edit'])) {
-  global $db;
-  $id = $_GET['edit'];
-  $update = true;
-  $record = mysqli_query($db, "SELECT * FROM multi_login WHERE id=$id");
+if (isset($_POST['update'])) {
+  update();
+}
 
-  if (count($record) == 1 ) {
-    $n = mysqli_fetch_array($record);
-    $username = $n['username'];
-    $email= $n['email'];
-    $user_type = $n['user_type'];
-  }
-
-  if (isset($_POST['update'])) {
-  	$id = $_POST['id'];
-  	$username= $_POST['name'];
-  	$email = $_POST['email'];
-    $role = $_POST['role'];
+function update() {
+  	$id = e($_POST['id']);
+  	$username= e($_POST['name']);
+  	$email = e($_POST['email']);
+    $role = e($_POST['role']);
 
   	mysqli_query($db, "UPDATE multi_login SET username='$username', email='$email', user_type='$user_type' WHERE id=$id");
   	$_SESSION['message'] = "User updated!";
-  	header('location: index.php');
+  	header('location: list_users.php');
   }
 }
