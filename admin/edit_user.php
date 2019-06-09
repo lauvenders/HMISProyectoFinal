@@ -1,20 +1,5 @@
 <?php include('../functions.php') ?>
 
-<?php
-if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = mysqli_query($db, "SELECT * FROM info WHERE id=$id");
-
-		if (count($record) == 1 ) {
-			$n = mysqli_fetch_array($record);
-			$username = $n['username'];
-			$email = $n['email'];
-			$user_type = $n['user_type'];
-		}
-	}
-	?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +22,7 @@ if (isset($_GET['edit'])) {
 	<form method="post" action="edit_user.php">
 
 		<?php echo display_error(); ?>
-
+		
 		<div class="input-group">
 			<label>Id</label>
 			<input type="text" name="id" value="<?php echo $id; ?>">
