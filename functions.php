@@ -182,19 +182,6 @@ function isAdmin()
 	}
 }
 
-if (isset($_GET['edit'])) {
-		$id = $_GET['edit'];
-		$update = true;
-		$record = mysqli_query($db, "SELECT * FROM info WHERE id=$id");
-
-		if (count($record) == 1 ) {
-			$n = mysqli_fetch_array($record);
-			$username = $n['username'];
-			$email = $n['email'];
-      $user_type = $n['user_type'];
-		}
-	}
-
 if (isset($_POST['update'])) {
   update();
 }
