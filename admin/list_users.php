@@ -19,7 +19,7 @@
     <form method="post" action="list_users.php">
 
   		<?php echo display_error(); ?>
-
+    <div style="overflow-x:auto;">
     <table style="width:100%">
           <thead>
               <th>ID</th>
@@ -36,5 +36,6 @@
           }
         ?>
     </table>
+  </div>
   </body>
   </html>
