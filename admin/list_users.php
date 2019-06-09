@@ -20,7 +20,7 @@
 
   		<?php echo display_error(); ?>
     <div style="overflow-x:auto;">
-    <table style="width:100%">
+    <table style="width:100%; text-align: center; vertical-align: middle;">
           <thead>
               <th>ID</th>
               <th>Username</th>
