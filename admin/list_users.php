@@ -38,8 +38,8 @@
                 .$row['username']."</td><td>"
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
-                .$row['password']."</td><td>"
-                "</td></tr>";
+                .$row['password']."</td><td>
+                </td></tr>";
             }
           ?>
           </tbody>
