@@ -39,7 +39,7 @@
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
                 .$row['password']."</td><td>
-                <div><a href=edit.php>Edit</a></div>
+                <div><a href=edit_user.php>Edit</a></div>
                 <div><a href=delete.php>Delete</a></div>
                 </td></tr>";
             }
