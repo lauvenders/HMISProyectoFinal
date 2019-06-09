@@ -1,6 +1,4 @@
-<?php include('../functions.php')
-  $db = new mysqli('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
-?>
+<?php include('../functions.php')?>
 
   <!DOCTYPE html>
   <html>
@@ -34,9 +32,13 @@
       </thead>
       <tbody>
         <?php
-        global $db;
-        $query = ("SELECT * FROM multi_login WHERE user_type = "user"");
-        while($row = $query->fetch_array()){
+        $conn = mysqli_connect('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
+        if($conn -> connect_error){
+          die("Connection failed: ". $conn-> connect_error);
+        }
+        $sql = ("SELECT * FROM multi_login WHERE user_type = "user"");
+        $result = $conn->$query($sql);
+        while($row = $result->fetch_array()){
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
             echo "<td>".$row['username'].$rowtwo['lastname']."</td>";
@@ -45,6 +47,7 @@
             echo "<td>".$row['password']."</td>";
             echo "</tr>";
         }
+        $conn-> close();
         ?>
       </tbody>
     </table>
