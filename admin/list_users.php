@@ -35,7 +35,7 @@
         if($conn -> connect_error){
           die("Connection failed: ". $conn-> connect_error);
         }
-        $sql = "SELECT * FROM users";
+        $sql = "SELECT * FROM `users` WHERE 1";
         $result = $conn->$query($sql);
         while($row = $result->fetch_assoc()){
             echo "<tr><td>".$row["id"]."</td><td>".$row["username"].$rowtwo["lastname"]."</td><td>".$row["email"].
