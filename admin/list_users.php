@@ -16,10 +16,6 @@
       <h2> Admin - User List</h2>
     </div>
 
-    <form method="post" action="list_users.php">
-
-      <?php echo display_error(); ?>
-
     <table style="width:100%">
           <tr>
               <th>ID</th>
