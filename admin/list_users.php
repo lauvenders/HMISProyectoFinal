@@ -3,7 +3,7 @@
   <!DOCTYPE html>
   <html>
   <head>
-  	<title>Registration system PHP and MySQL - User List</title>
+  	<title>User List</title>
   	<link rel="stylesheet" type="text/css" href="../style.css">
   	<style>
   		.header {
@@ -39,8 +39,8 @@
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
                 .$row['password']."</td><td>
-                <div><a href=edit.php>Edit User</a></div>
-                <div><a href=delete.php>Delete User</a></div>
+                <div><a href=edit.php>Edit</a></div>
+                <div><a href=delete.php>Delete</a></div>
                 </td></tr>";
             }
           ?>

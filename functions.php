@@ -14,6 +14,7 @@ $email    = "";
 $password_1 = "";
 $password_2 = "";
 $errors   = array();
+$update = false;
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) {
@@ -179,4 +180,29 @@ function isAdmin()
 	}else{
 		return false;
 	}
+}
+
+if (isset($_GET['edit'])) {
+  global $db;
+  $id = $_GET['edit'];
+  $update = true;
+  $record = mysqli_query($db, "SELECT * FROM multi_login WHERE id=$id");
+
+  if (count($record) == 1 ) {
+    $n = mysqli_fetch_array($record);
+    $username = $n['username'];
+    $email= $n['email'];
+    $user_type = $n['user_type'];
+  }
+
+  if (isset($_POST['update'])) {
+  	$id = $_POST['id'];
+  	$username= $_POST['name'];
+  	$email = $_POST['email'];
+    $role = $_POST['role'];
+
+  	mysqli_query($db, "UPDATE multi_login SET username='$username', email='$email', user_type='$user_type' WHERE id=$id");
+  	$_SESSION['message'] = "User updated!";
+  	header('location: index.php');
+  }
 }
