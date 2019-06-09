@@ -200,7 +200,7 @@ if (isset($_POST['update'])) {
 }
 
 function update() {
-  	$id = e($_POST['id']);
+  	$id = e($_GET['id']);
   	$username= e($_POST['username']);
   	$email = e($_POST['email']);
     $user_type = e($_POST['user_type']);
