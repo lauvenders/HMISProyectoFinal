@@ -39,8 +39,11 @@
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
                 .$row['password']."</td><td>
-                <a href="create_user.php"> + add user</a>
-                &nbsp; <a href="list_users.php"> + see users</a>
+                <a href="create_user.php">
+                <div style="height:100%;width:100%">
+                  create_user
+                </div>
+                </a>
                 </td></tr>";
             }
           ?>
