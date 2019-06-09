@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registration system PHP and MySQL - Create user</title>
+	<title>Create user</title>
 	<link rel="stylesheet" type="text/css" href="../style.css">
 	<style>
 		.header {
@@ -17,7 +17,7 @@
 	<div class="header">
 		<h2>Admin - create user</h2>
 	</div>
-	
+
 	<form method="post" action="create_user.php">
 
 		<?php echo display_error(); ?>
@@ -47,7 +47,7 @@
 			<input type="password" name="password_2">
 		</div>
 		<div class="input-group">
-			<button type="submit" class="btn" name="register_btn"> + Create user</button>
+			<button type="submit" class="btn" name="register_btn">Create user</button>
 		</div>
 	</form>
 </body>
