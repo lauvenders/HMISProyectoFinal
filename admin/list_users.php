@@ -32,13 +32,13 @@
       </thead>
       <tbody>
         <?php
-        $conn = new mysqli('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
+        $conn = mysqli_connect('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
         if($conn -> connect_error){
           die("Connection failed: ". $conn-> connect_error);
         }
-        $sql = ("SELECT * FROM multi_login WHERE user_type = "user"");
+        $sql = "SELECT * FROM multi_login";
         $result = $conn->$query($sql);
-        while($row = $result->fetch_array()){
+        while($row = $result->fetch_assoc()){
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
             echo "<td>".$row['username'].$rowtwo['lastname']."</td>";
