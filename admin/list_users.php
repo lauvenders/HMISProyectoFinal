@@ -40,7 +40,7 @@
                 .$row['user_type']."</td><td>"
                 .$row['password']."</td><td>
                 <div><a href=edit_user.php>Edit</a></div>
-                <div><a href=delete.php>Delete</a></div>
+                <div><a href=delete_user.php>Delete</a></div>
                 </td></tr>";
             }
           ?>
