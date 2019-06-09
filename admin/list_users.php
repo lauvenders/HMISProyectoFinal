@@ -17,17 +17,17 @@
     </div>
 
     <form method="post" action="list_users.php">
-  
+
   		<?php echo display_error(); ?>
 
     <table style="width:100%">
-          <tr>
+          <thead>
               <th>ID</th>
               <th>Username</th>
               <th>E-mail</th>
               <th>Role</th>
               <th>Password</th>
-          </tr>
+          </thead>
         <?php
         $result = getusers();
           while($row = mysqli_fetch_array($result)){
