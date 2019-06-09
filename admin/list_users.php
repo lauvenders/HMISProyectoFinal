@@ -30,7 +30,6 @@
               <th>Password</th>
           </tr>
       </thead>
-      <tbody>
         <?php
         $conn = mysqli_connect('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
         if($conn -> connect_error){
@@ -50,7 +49,6 @@
         }
         $conn-> close();
         ?>
-      </tbody>
     </table>
   </body>
   </html>
