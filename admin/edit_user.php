@@ -23,7 +23,7 @@
 		<?php echo display_error(); ?>
 
 		<div class="input-group">
-		<input type="hidden" name="id" value="<?php echo $id; ?>">
+			<input type="hidden" name="id" value="<?php echo $id; ?>">
     </div>
     <div class="input-group">
       <label>Username</label>
