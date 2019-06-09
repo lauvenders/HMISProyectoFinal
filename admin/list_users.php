@@ -37,9 +37,15 @@
         }
         $sql = "SELECT * FROM `users` WHERE 1";
         $result = $conn->$query($sql);
-        while($row = $result->fetch_assoc()){
-            echo "<tr><td>".$row["id"]."</td><td>".$row["username"].$rowtwo["lastname"]."</td><td>".$row["email"].
-            "</td><td>".$row["user_type"]."</td><td>".$row["password"]."</td></tr>";
+        if($result -> num_rows > 0){
+          while($row = $result->fetch_assoc()){
+              echo "<tr><td>".$row["id"]."</td><td>".$row["username"].$rowtwo["lastname"]."</td><td>".$row["email"].
+              "</td><td>".$row["user_type"]."</td><td>".$row["password"]."</td></tr>";
+          }
+          echo "</table>";
+        }
+        else{
+          echo 0 result;
         }
         $conn-> close();
         ?>
