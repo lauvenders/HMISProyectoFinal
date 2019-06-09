@@ -31,8 +31,12 @@
         <?php
         $result = getusers();
           while($row = mysqli_fetch_array($result)){
-              echo "<tr><td>".$row['id']."</td><td>".$row['username']."</td><td>".$row['email'].
-              "</td><td>".$row['user_type']."</td><td>".$row['password']."</td></tr>";
+              echo "<tr><td style="text-align: center;">"
+              .$row['id']."</td><td style="text-align: center;">"
+              .$row['username']."</td><td style="text-align: center;">"
+              .$row['email']."</td><td style="text-align: center;">"
+              .$row['user_type']."</td><td style="text-align: center;">"
+              .$row['password']."</td style="text-align: center;"></tr>";
           }
         ?>
     </table>
