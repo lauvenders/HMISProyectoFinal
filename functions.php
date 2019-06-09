@@ -20,6 +20,10 @@ if (isset($_POST['register_btn'])) {
 	register();
 }
 
+if (isset($_POST['edit_btn'])) {
+	editProfile();
+}
+
 // REGISTER USER
 function register(){
 	// call these variables with the global keyword to make them available in function
@@ -161,6 +165,37 @@ function login(){
 		}else {
 			array_push($errors, "Wrong username/password combination");
 		}
+	}
+}
+
+function editProfile(){
+	// call these variables with the global keyword to make them available in function
+	global $db, $errors, $username, $email;
+
+	// receive all input values from the form. Call the e() function
+    // defined below to escape form values
+	$username    =  e($_POST['username']);
+	$email       =  e($_POST['email']);
+	$aux = $_SESSION['user']['username'];
+
+	// form validation: ensure that the form is correctly filled
+	if (empty($username)) {
+		array_push($errors, "Username is required");
+	}
+	if (empty($email)) {
+		array_push($errors, "Email is required");
+	}
+
+	// change user data if there are no errors in the form
+	if (count($errors) == 0) {
+		$_SESSION['user']['username'] = $username;
+		$_SESSION['user']['email'] = $email;
+		$query = "UPDATE users (username, email, user_type, password)
+					SET username = '$username', email ='$email'
+					WHERE users.username = '$aux'";
+		mysqli_query($db, $query);
+		$_SESSION['success']  = "User data succesfully edited";
+		header('location: index.php');		
 	}
 }
 
