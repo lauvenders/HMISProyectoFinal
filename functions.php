@@ -188,9 +188,9 @@ if (isset($_POST['update'])) {
 
 function update() {
   	$id = e($_POST['id']);
-  	$username= e($_POST['name']);
+  	$username= e($_POST['username']);
   	$email = e($_POST['email']);
-    $role = e($_POST['role']);
+    $user_type = e($_POST['user_type']);
 
   	mysqli_query($db, "UPDATE multi_login SET username='$username', email='$email', user_type='$user_type' WHERE id=$id");
   	$_SESSION['message'] = "User updated!";
