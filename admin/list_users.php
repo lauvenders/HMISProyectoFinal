@@ -44,7 +44,7 @@
           }
         }
         else{
-          echo 0 result;
+          echo "0 results";
         }
         $conn-> close();
         ?>
