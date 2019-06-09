@@ -39,6 +39,8 @@
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
                 .$row['password']."</td><td>
+                <a href="modify_user.php"> + modify user</a>
+                &nbsp; <a href="delete_user.php"> + delete user</a>
                 </td></tr>";
             }
           ?>
