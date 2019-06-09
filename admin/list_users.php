@@ -29,14 +29,14 @@
               <th>password</th>
           </tr>
         <?php
-        $conn = new PDO('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
+        $conn = mysqli_connect('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
         if($conn -> connect_error){
           die("Connection failed: ". $conn-> connect_error);
         }
-        $sql = "SELECT * FROM users";
+        $sql  = 'SELECT * FROM `users` WHERE 1';
         $result = $conn->$query($sql);
         if($result -> num_rows > 0){
-          while($row = $result->fetch_assoc()){
+          while($row = mysql_fetch_array($result)){
               echo "<tr><td>".$row["id"]."</td><td>".$row["username"]."</td><td>".$row["email"].
               "</td><td>".$row["user_type"]."</td><td>".$row["password"]."</td></tr>";
           }
