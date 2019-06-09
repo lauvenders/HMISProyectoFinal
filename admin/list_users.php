@@ -32,8 +32,8 @@
         $result = getusers();
         if($result -> num_rows > 0){
           while($row = mysqli_fetch_assoc($result)){
-              echo "<tr><td>".$row["id"]."</td><td>".$row["username"]."</td><td>".$row["email"].
-              "</td><td>".$row["user_type"]."</td><td>".$row["password"]."</td></tr>";
+              echo "<tr><td>".$row['id']."</td><td>".$row['username']."</td><td>".$row['email'].
+              "</td><td>".$row['user_type']."</td><td>".$row['password']."</td></tr>";
           }
         }
         else{
