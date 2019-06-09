@@ -38,7 +38,7 @@
                 .$row['username']."</td><td>"
                 .$row['email']."</td><td>"
                 .$row['user_type']."</td><td>"
-                .$row['password']."</td><td>Edit User &nbsp Delete User</td></tr>";
+                .$row['password']."</td><td>Edit User &nbsp; Delete User</td></tr>";
             }
           ?>
           </tbody>
