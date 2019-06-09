@@ -164,7 +164,6 @@ function login(){
 	}
 }
 
-// ...
 function isAdmin()
 {
 	if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
@@ -172,4 +171,15 @@ function isAdmin()
 	}else{
 		return false;
 	}
+}
+
+function set($u, $e, $p1, $p2){
+	$username = $u;
+	$email = $e;
+	$password_1 = $p1;
+	$password_2 = $p2;
+}
+
+function getErrors(){
+	return $errors;
 }
