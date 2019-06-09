@@ -30,13 +30,12 @@
               <th>Password</th>
           </tr>
       </thead>
-      <tbody>
         <?php
         $conn = mysqli_connect('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
         if($conn -> connect_error){
           die("Connection failed: ". $conn-> connect_error);
         }
-        $sql = "SELECT * FROM `users`";
+        $sql = "SELECT * FROM users";
         $result = $conn->$query($sql);
         while($row = $result->fetch_assoc()){
             echo "<tr>";
@@ -49,7 +48,6 @@
         }
         $conn-> close();
         ?>
-      </tbody>
     </table>
   </body>
   </html>
