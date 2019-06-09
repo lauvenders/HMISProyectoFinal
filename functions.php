@@ -195,5 +195,4 @@ function update() {
   	mysqli_query($db, "UPDATE multi_login SET username='$username', email='$email', user_type='$user_type' WHERE id=$id");
   	$_SESSION['message'] = "User updated!";
   	header('location: list_users.php');
-  }
 }
