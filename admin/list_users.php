@@ -38,13 +38,8 @@
         $sql = "SELECT * FROM users";
         $result = $conn->$query($sql);
         while($row = $result->fetch_assoc()){
-            echo "<tr>";
-            echo "<td>".$row['id']."</td>";
-            echo "<td>".$row['username'].$rowtwo['lastname']."</td>";
-            echo "<td>".$row['email']."</td>";
-            echo "<td>".$row['user_type']."</td>";
-            echo "<td>".$row['password']."</td>";
-            echo "</tr>";
+            echo "<tr><td>".$row["id"]."</td><td>".$row["username"].$rowtwo["lastname"]."</td><td>".$row["email"].
+            "</td><td>".$row["user_type"]."</td><td>".$row["password"]."</td></tr>";
         }
         $conn-> close();
         ?>
