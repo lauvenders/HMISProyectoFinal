@@ -2,7 +2,7 @@
 session_start();
 
 // connect to database
-$db = new mysqli('127.0.0.1:49452', 'azure', '6#vWHD_$', 'multi_login');
+$db = new mysqli('localhost', 'root', '', 'multi_login');
 
 if ($db->connect_error) {
     die("Connection failed: " . $conn->connect_error);
@@ -14,11 +14,14 @@ $email    = "";
 $password_1 = "";
 $password_2 = "";
 $errors   = array();
-$update = false;
 
 // call the register() function if register_btn is clicked
 if (isset($_POST['register_btn'])) {
 	register();
+}
+
+if (isset($_POST['edit_btn'])) {
+	editProfile();
 }
 
 // REGISTER USER
@@ -81,13 +84,6 @@ function getUserById($id){
 
 	$user = mysqli_fetch_assoc($result);
 	return $user;
-}
-
-function getusers(){
-  global $db;
-  $query = "SELECT * FROM users WHERE 1";
-  $result = mysqli_query($db, $query);
-  return $result;
 }
 
 // escape string
@@ -172,7 +168,37 @@ function login(){
 	}
 }
 
-// ...
+function editProfile(){
+	// call these variables with the global keyword to make them available in function
+	global $db, $errors, $username, $email;
+
+	// receive all input values from the form. Call the e() function
+    // defined below to escape form values
+	$username    =  e($_POST['username']);
+	$email       =  e($_POST['email']);
+	$aux = $_SESSION['user']['username'];
+
+	// form validation: ensure that the form is correctly filled
+	if (empty($username)) {
+		array_push($errors, "Username is required");
+	}
+	if (empty($email)) {
+		array_push($errors, "Email is required");
+	}
+
+	// change user data if there are no errors in the form
+	if (count($errors) == 0) {
+		$_SESSION['user']['username'] = $username;
+		$_SESSION['user']['email'] = $email;
+		$query = "UPDATE users (username, email, user_type, password)
+					SET username = '$username', email ='$email'
+					WHERE users.username = '$aux'";
+		mysqli_query($db, $query);
+		$_SESSION['success']  = "User data succesfully edited";
+		header('location: index.php');		
+	}
+}
+
 function isAdmin()
 {
 	if (isset($_SESSION['user']) && $_SESSION['user']['user_type'] == 'admin' ) {
@@ -182,17 +208,13 @@ function isAdmin()
 	}
 }
 
-if (isset($_POST['update'])) {
-  update();
+function set($u, $e, $p1, $p2){
+	$username = $u;
+	$email = $e;
+	$password_1 = $p1;
+	$password_2 = $p2;
 }
 
-function update() {
-  	$id = e($_POST['id']);
-  	$username= e($_POST['username']);
-  	$email = e($_POST['email']);
-    $user_type = e($_POST['user_type']);
-
-  	mysqli_query($db, "UPDATE multi_login SET username='$username', email='$email', user_type='$user_type' WHERE id=$id");
-  	$_SESSION['message'] = "User updated!";
-  	header('location: list_users.php');
+function getErrors(){
+	return $errors;
 }
