@@ -1,5 +1,4 @@
 <?php include('../functions.php') ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +42,7 @@
       </select>
     </div>
     <div class="input-group">
-      <button type="submit" class="btn" name="update"> + Update</button>
+      <button type="submit" class="btn" name="update">Update</button>
     </div>
   </form>
   </body>

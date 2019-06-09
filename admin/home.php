@@ -54,9 +54,9 @@ if (isset($_GET['logout'])) {
 					<small>
 						<i  style="color: #888;">(<?php echo ucfirst($_SESSION['user']['user_type']); ?>)</i>
 						<br>
-						<a href="home.php?logout='1'" style="color: red;">logout</a>
-                       &nbsp; <a href="create_user.php"> + add user</a>
-											 &nbsp; <a href="list_users.php"> + see users</a>
+						<a href="home.php?logout='1'" style="color: red;">Logout</a>
+                       &nbsp; <a href="create_user.php">Add user</a>
+											 &nbsp; <a href="list_users.php">See users</a>
 					</small>
 
 				<?php endif ?>
